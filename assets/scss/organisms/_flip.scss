@@ -1,0 +1,79 @@
+.gh-respo {
+    padding: 40px 0;
+    width: 100%;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: #000;
+        opacity: 0.5;
+        z-index: 1;
+    }
+
+    &__outer {
+        display: flex;
+        margin: 0 -16px;
+        flex-wrap: wrap;
+        padding-top: 16px;
+    }
+
+    &__tile {
+        width: calc(33% - 32px);
+        margin: 0 16px;
+        z-index: 2;
+        position: relative;
+        padding-bottom: 40px;
+    }
+
+    &__heading {
+        font-size: 50px;
+        font-weight: 900;
+        margin-bottom: 32px;
+        color: #fff;
+        z-index: 2;
+        position: relative;
+    }
+
+    &__para {
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 32px;
+        color: #fff;
+        z-index: 2;
+        position: relative;
+    }
+}
+
+@include tablet {
+    .gh-respo {
+        &__outer {
+            justify-content: center;
+        }
+        &__tile {
+            width: calc(50% - 32px);
+            padding-bottom: 20px;
+        }
+    }
+}
+
+@include mobile {
+    .gh-respo {
+        &__outer {
+          display: block;
+        }
+
+        &__tile {
+            width: calc(100% - 32px);
+            padding-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+.gh-pricing {
+    padding: $spacer-6 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    
+    &__outer {
+        display: flex;
+        margin: 0 -16px;
+        flex-wrap: wrap;
+    }
+
+    &__tile {
+        width: calc(25% - 32px);
+        margin: 0 16px;
+    }
+
+    &__arrow {
+        display: none;
+    }
+}
+
+@include tablet {
+    .gh-pricing {
+        &__tile {
+            width: calc(50% - 32px);
+            padding-bottom: $spacer-4;
+        }
+        &__arrow {
+            display: none;
+        }
+    }
+}
+
+@include mobile {
+    .gh-pricing {
+        &__outer {
+            flex-direction: column;
+        }
+        &__tile {
+            width: calc(100% - 32px);
+            padding-bottom: $spacer-4;
+        }
+        .hide {
+            display: none;
+        }
+
+        .hide.show {
+            display: block;
+        }
+        &__arrow {
+            width: 20px;
+            height: 20px;
+            display: block;
+            margin: $spacer-2 auto;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            &.up {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
